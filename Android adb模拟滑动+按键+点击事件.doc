@@ -1,0 +1,181 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta name="robots" content="noindex,follow">
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<title>Android adb模拟滑动+按键+点击事件94</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>三亿文库</o:Author>
+  <o:LastAuthor>三亿文库</o:LastAuthor>
+  <o:Revision>1</o:Revision>
+  <o:TotalTime>3</o:TotalTime>
+  <o:Created>2011-07-03T05:27:00Z</o:Created>
+  <o:LastSaved>2015/8/8 18:49:02Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>9</o:Words>
+  <o:Company>http://3y.uu456.com</o:Company>
+  <o:Paragraphs>1</o:Paragraphs>
+  <o:Version>11.9999</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:PunctuationKerning/>
+  <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:宋体;
+	panose-1:2 1 6 9 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 135135232 16 0 262144 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:"\@仿宋_GB2312";
+	panose-1:2 1 6 9 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 135135232 16 0 262144 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:13.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:1.0pt;}
+h1
+	{mso-style-next:正文;
+	margin-top:17.0pt;
+	margin-right:0cm;
+	margin-bottom:16.5pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:140%;
+	mso-pagination:lines-together;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	mso-font-kerning:18.0pt;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+<body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+<div class=Section1 style='layout-grid:14pt'>
+
+
+<p class=MsoNormal align=left style='text-align:left;line-height:150%;margin-top:3.6pt;'><span lang=EN-US style='font-size:9.0pt;line-height:150%'><a href="http://3y.uu456.com/ss_01t03202s03603302x02s00w02p02s02qkypjj3lw1gbs017jk9tgu017m9lg6zfijfli01l01g_1.html"><span lang=EN-US style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";text-decoration:none;text-underline:none'><span lang=EN-US>点这里，有很多篇《Android adb模拟滑动+按键+点击事件94》</span></span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-size:12.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";color:#993300'>在线阅读本文：</span><span lang=EN-US style='font-size:12.0pt;color:#999999'><a href="http://3y.uu456.com/bp_0jb9f3j2km3sk4u08kh0_1.html"><span
+style='text-decoration:none;text-underline:none'>http://3y.uu456.com/bp_0jb9f3j2km3sk4u08kh0_1.html</span></a><o:p></o:p></span></p>
+
+<h1 align=center style='text-align:center'><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>Android adb模拟滑动+按键+点击事件94</span></h1>
+
+
+<div class=MsoNormal style='margin-top:7.8pt;margin-right:0cm;margin-bottom:7.8pt;
+margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:0cm;mso-para-margin-bottom:
+.5gd;mso-para-margin-left:0cm;text-indent:2em;mso-char-indent-count:2.0;
+line-height:20pt;mso-line-height-rule:exactly;font-family:宋体;
+mso-hansi-font-family:宋体;'><p>Androidadb模拟滑动按键点击事件；模拟事件全部是通过input命令来实现的，首先看；使用Adbshellcommand直接送keye；adbshellinputkeyevent7#f；adbshellinputkeyevent8#f；adbshellinputkeyevent29#；adbshellinputkeyevent54#；adbshelli</p><p><p>Android adb 模拟滑动 按键 点击事件 <p>模拟事件全部是通过input命令来实现的，首先看一下input命令的使用： <p>使用Adb shell command直接送key event給Android<p>adb shell input keyevent 7    # for key '0'<p>adb shell input keyevent 8    # for key '1'<p>adb shell input keyevent 29    # for key 'A'<p>adb shell input keyevent 54    # for key 'B'<p>adb shell input text &quot;ANDROID&quot; <p><p>usage: input ...<p><p>input text &lt;string&gt;<p>input keyevent &lt;key code number or name&gt;<p>input tap &lt;x&gt; &lt;y&gt;<p>input swipe &lt;x1&gt; &lt;y1&gt; &lt;x2&gt; &lt;y2&gt;<p><p>1. keyevent指的是android对应的keycode，比如home键的keycode=3，back键的keycode=4.<p>具体请查阅 &lt;android keycode详解&gt; http://blog.csdn.net/huiguixian/article/details/8550170<p>然后使用的话比较简单，比如想模拟home按键：<p>adb shell input keyevent 3<p><p>请查阅上述文章，根据具体keycode编辑即可。<p><p>2. 关于tap的话，他模拟的是touch屏幕的事件，只需给出x、y坐标即可。<p>此x、y坐标对应的是真实的屏幕分辨率，所以要根据具体手机具体看，比如你想点击屏幕(x, y) = (250, 250)位置：<p>adb shell input tap 250 250<p><p>3. 关于swipe同tap是一样的，只是他是模拟滑动的事件，给出起点和终点的坐标即可。例如从屏幕(250, 250), 到屏幕(300, 300)即<p>adb shell input swipe 250 250 300 300<p><p><p><p>KEYCODE列表<p><p>电话键<p><p>KEYCODE_CALL 拨号键 5 <p>KEYCODE_ENDCALL 挂机键 6 <p>KEYCODE_HOME 按键Home 3 <p>KEYCODE_MENU 菜单键 82 <p>KEYCODE_BACK 返回键 4 <p>KEYCODE_SEARCH 搜索键 84 <p>KEYCODE_CAMERA 拍照键 27 <p>KEYCODE_FOCUS 拍照对焦键 80 <p>KEYCODE_POWER 电源键 26 <p>KEYCODE_NOTIFICATION 通知键 83 <p>KEYCODE_MUTE 话筒静音键 91 <p>KEYCODE_VOLUME_MUTE 扬声器静音键 164 <p>KEYCODE_VOLUME_UP 音量增加键 24 <p>KEYCODE_VOLUME_DOWN 音量减小键 25 <p><p><p><p>控制键<p><p>KEYCODE_ENTER 回车键 66 <p>KEYCODE_ESCAPE ESC键 111 <p>KEYCODE_DPAD_CENTER 导航键 确定键 23 <p>KEYCODE_DPAD_UP 导航键 向上 19 <p>KEYCODE_DPAD_DOWN 导航键 向下 20 <p>KEYCODE_DPAD_LEFT 导航键 向左 21 <p>KEYCODE_DPAD_RIGHT 导航键 向右 22 <p>KEYCODE_MOVE_HOME 光标移动到开始键 122 <p>KEYCODE_MOVE_END 光标移动到末尾键 123 <p>KEYCODE_PAGE_UP 向上翻页键 92 <p>KEYCODE_PAGE_DOWN 向下翻页键 93 <p>KEYCODE_DEL 退格键 67 <p>KEYCODE_FORWARD_DEL 删除键 112 <p>KEYCODE_INSERT 插入键 124 <p>KEYCODE_TAB Tab键 61 <p>KEYCODE_NUM_LOCK 小键盘锁 143 <p>KEYCODE_CAPS_LOCK 大写锁定键 115 <p>KEYCODE_BREAK Break/Pause键 121 <p>KEYCODE_SCROLL_LOCK 滚动锁定键 116 <p>KEYCODE_ZOOM_IN 放大键 168 <p>KEYCODE_ZOOM_OUT 缩小键 169 <p><p><p><p>组合键<p><p>KEYCODE_ALT_LEFT Alt+Left <p>KEYCODE_ALT_RIGHT Alt+Right <p>KEYCODE_CTRL_LEFT Control+Left <p>KEYCODE_CTRL_RIGHT Control+Right <p>KEYCODE_SHIFT_LEFT Shift+Left <p>KEYCODE_SHIFT_RIGHT Shift+Right <p><p><p><p>基本<p><p>KEYCODE_0 按键'0' 7 <p>KEYCODE_1 按键'1' 8 <p>KEYCODE_2 按键'2' 9 <p>KEYCODE_3 <p></p><p>按键'3' 10 <p>KEYCODE_4 按键'4' 11 <p>KEYCODE_5 按键'5' 12 <p>KEYCODE_6 按键'6' 13 <p>KEYCODE_7 按键'7' 14 <p>KEYCODE_8 按键'8' 15 <p>KEYCODE_9 按键'9' 16 <p>KEYCODE_A 按键'A' 29 <p>KEYCODE_B 按键'B' 30 <p>KEYCODE_C 按键'C' 31 <p>KEYCODE_D 按键'D' 32 <p>KEYCODE_E 按键'E' 33 <p>KEYCODE_F 按键'F' 34 <p>KEYCODE_G 按键'G' 35 <p>KEYCODE_H 按键'H' 36 <p>KEYCODE_I 按键'I' 37 <p>KEYCODE_J 按键'J' 38 <p>KEYCODE_K 按键'K' 39 <p>KEYCODE_L 按键'L' 40 <p>KEYCODE_M 按键'M' 41 <p>KEYCODE_N 按键'N' 42 <p>KEYCODE_O 按键'O' 43 <p>KEYCODE_P 按键'P' 44 <p>KEYCODE_Q 按键'Q' 45 <p>KEYCODE_R 按键'R' 46 <p>KEYCODE_S 按键'S' 47 <p>KEYCODE_T 按键'T' 48 <p>KEYCODE_U 按键'U' 49 <p>KEYCODE_V 按键'V' 50 <p>KEYCODE_W 按键'W' 51 <p>KEYCODE_X 按键'X' 52 <p>KEYCODE_Y 按键'Y' 53 <p>KEYCODE_Z 按键'Z' 54 <p><p><p><p>符号<p><p>KEYCODE_PLUS 按键'+' <p>KEYCODE_MINUS 按键'-' <p>KEYCODE_STAR 按键'*' <p>KEYCODE_SLASH 按键'/' <p>KEYCODE_EQUALS 按键'=' <p>KEYCODE_AT 按键'@' <p>KEYCODE_POUND 按键'#' <p>KEYCODE_APOSTROPHE 按键''' (单引号) <p>KEYCODE_BACKSLASH 按键'\' <p>KEYCODE_COMMA 按键',' <p>KEYCODE_PERIOD 按键'.' <p>KEYCODE_LEFT_BRACKET 按键'[' <p>KEYCODE_RIGHT_BRACKET 按键']' <p>KEYCODE_SEMICOLON 按键';' <p>KEYCODE_GRAVE 按键'`' <p>KEYCODE_SPACE 空格键 <p><p><p><p>小键盘<p><p>KEYCODE_NUMPAD_0 小键盘按键'0' <p>KEYCODE_NUMPAD_1 小键盘按键'1' <p>KEYCODE_NUMPAD_2 小键盘按键'2' <p>KEYCODE_NUMPAD_3 小键盘按键'3' <p>KEYCODE_NUMPAD_4 小键盘按键'4' <p>KEYCODE_NUMPAD_5 小键盘按键'5' <p>KEYCODE_NUMPAD_6 小键盘按键'6' <p>KEYCODE_NUMPAD_7 小键盘按键'7' <p>KEYCODE_NUMPAD_8 小键盘按键'8' <p>KEYCODE_NUMPAD_9 小键盘按键'9' <p>KEYCODE_NUMPAD_ADD 小键盘按键'+' <p>KEYCODE_NUMPAD_SUBTRACT 小键盘按键'-' <p>KEYCODE_NUMPAD_MULTIPLY 小键盘按键'*' <p>KEYCODE_NUMPAD_DIVIDE 小键盘按键'/' <p>KEYCODE_NUMPAD_EQUALS 小键盘按键'=' <p>KEYCODE_NUMPAD_COMMA 小键盘按键',' <p>KEYCODE_NUMPAD_DOT 小键盘按键'.' <p>KEYCODE_NUMPAD_LEFT_PAREN 小键盘按键'(' <p>KEYCODE_NUMPAD_RIGHT_PAREN 小键盘按键')' <p>KEYCODE_NUMPAD_ENTER 小键盘按键回车 <p><p><p><p>功能键<p><p>KEYCODE_F1 按键F1 <p>KEYCODE_F2 按键F2 <p>KEYCODE_F3 按键F3 <p>KEYCODE_F4 按键F4 <p>KEYCODE_F5 按键F5 <p>KEYCODE_F6 按键F6 <p>KEYCODE_F7 按键F7 <p>KEYCODE_F8 按键F8 <p>KEYCODE_F9 按键F9 <p>KEYCODE_F10 按键F10 <p>KEYCODE_F11 按键F11 <p>KEYCODE_F12 按键F12 <p><p><p><p>多媒体键<p><p>KEYCODE_MEDIA_PLAY 多媒体键 播放 <p>KEYCODE_MEDIA_STOP 多媒体键 停止 <p>KEYCODE_MEDIA_PAUSE 多媒体键 暂停 <p>KEYCODE_MEDIA_PLAY_PAUSE 多媒体键 播放/暂停 <p>KEYCODE_MEDIA_FAST_FORWARD 多媒体键 快进 <p>KEYCODE_MEDIA_REWIND 多媒体键 快退 <p>KEYCODE_MEDIA_NEXT 多媒体键 下一首 <p>KEYCODE_MEDIA_PREVIOUS 多媒体键 上一首 <p>KEYCODE_MEDIA_CLOSE 多媒体键 关闭 <p>KEYCODE_MEDIA_EJECT 多媒体键 弹出 <p>KEYCODE_MEDIA_RECORD 多媒体键 录音 <p><p><p><p>手柄按键<p><p>KEYCODE_BUTTON_1 通用游戏手柄按钮#<p></p><p>1 <p>KEYCODE_BUTTON_2 通用游戏手柄按钮 #2 <p>KEYCODE_BUTTON_3 通用游戏手柄按钮 #3 <p>KEYCODE_BUTTON_4 通用游戏手柄按钮 #4 <p>KEYCODE_BUTTON_5 通用游戏手柄按钮 #5 <p>KEYCODE_BUTTON_6 通用游戏手柄按钮 #6 <p>KEYCODE_BUTTON_7 通用游戏手柄按钮 #7 <p>KEYCODE_BUTTON_8 通用游戏手柄按钮 #8 <p>KEYCODE_BUTTON_9 通用游戏手柄按钮 #9 <p>KEYCODE_BUTTON_10 通用游戏手柄按钮 #10 <p>KEYCODE_BUTTON_11 通用游戏手柄按钮 #11 <p>KEYCODE_BUTTON_12 通用游戏手柄按钮 #12 <p>KEYCODE_BUTTON_13 通用游戏手柄按钮 #13 <p>KEYCODE_BUTTON_14 通用游戏手柄按钮 #14 <p>KEYCODE_BUTTON_15 通用游戏手柄按钮 #15 <p>KEYCODE_BUTTON_16 通用游戏手柄按钮 #16 <p>KEYCODE_BUTTON_A 游戏手柄按钮 A <p>KEYCODE_BUTTON_B 游戏手柄按钮 B <p>KEYCODE_BUTTON_C 游戏手柄按钮 C <p>KEYCODE_BUTTON_X 游戏手柄按钮 X <p>KEYCODE_BUTTON_Y 游戏手柄按钮 Y <p>KEYCODE_BUTTON_Z 游戏手柄按钮 Z <p>KEYCODE_BUTTON_L1 游戏手柄按钮 L1 <p>KEYCODE_BUTTON_L2 游戏手柄按钮 L2 <p>KEYCODE_BUTTON_R1 游戏手柄按钮 R1 <p>KEYCODE_BUTTON_R2 游戏手柄按钮 R2 <p>KEYCODE_BUTTON_MODE 游戏手柄按钮 Mode <p>KEYCODE_BUTTON_SELECT 游戏手柄按钮 Select <p>KEYCODE_BUTTON_START 游戏手柄按钮 Start <p>KEYCODE_BUTTON_THUMBL Left Thumb Button <p>KEYCODE_BUTTON_THUMBR Right Thumb Button <p><p><p><p>待查<p><p>KEYCODE_NUM		 按键Number modifier<p>KEYCODE_INFO		 按键Info<p>KEYCODE_APP_SWITCH	 按键App switch<p>KEYCODE_BOOKMARK	 按键Bookmark<p>KEYCODE_AVR_INPUT	 按键A/V Receiver input<p>KEYCODE_AVR_POWER	 按键A/V Receiver power<p>KEYCODE_CAPTIONS	 按键Toggle captions<p>KEYCODE_CHANNEL_DOWN	 按键Channel down<p>KEYCODE_CHANNEL_UP	 按键Channel up<p>KEYCODE_CLEAR		 按键Clear<p>KEYCODE_DVR		 按键DVR <p>KEYCODE_ENVELOPE	 按键Envelope special function<p>KEYCODE_EXPLORER	 按键Explorer special function<p>KEYCODE_FORWARD		 按键Forward<p>KEYCODE_FORWARD_DEL	 按键Forward Delete<p>KEYCODE_FUNCTION	 按键Function modifier<p>KEYCODE_GUIDE		 按键Guide<p>KEYCODE_HEADSETHOOK	 按键Headset Hook<p>KEYCODE_META_LEFT	 按键Left Meta modifier<p>KEYCODE_META_RIGHT	 按键Right Meta modifier<p>KEYCODE_PICTSYMBOLS	 按键Picture Symbols modifier<p>KEYCODE_PROG_BLUE	 按键Blue “programmable”<p>KEYCODE_PROG_GREEN	 按键Green “programmable”<p>KEYCODE_PROG_RED	 按键Red “programmable”<p>KEYCODE_PROG_YELLOW	 按键Yellow “programmable”<p>KEYCODE_SETTINGS	 按键Settings<p>KEYCODE_SOFT_LEFT	 按键Soft Left<p>KEYCODE_SOFT_RIGHT	 按键Soft Right<p>KEYCODE_STB_INPUT	 按键Set-top-box input<p>KEYCODE_STB_POWER	 按键Set-top-box power<p>KEYCODE_SWITCH_CHARSET	 按键Switch Charset modifier<p>KEYCODE_SYM		 按键Symbol modifier<p>KEYCODE_SYSRQ		 按键System Request / Print Screen<p>KEYCODE_TV		 按键TV<p>KEYCODE_TV_INPUT	 按键TV input<p>KEYCODE_TV_POWER	 按键TV power<p>KEYCODE_WINDOW		 按键Window<p>KEYCODE_UNKNOWN		 未知按键<p><p><p><p><p><p><p><p><p><p><p><p>ADB (Android Debug Bridge)<p>说明：下面一些命令需要<p></p><p>有root权限才能执行成功<p>快速启动dos窗口执行adb：<p>1. adb.exe所在路径添加到系统环境变量中<p>2. 配置快捷键启动dos<p>进入C:\WINDOWS\system32目录下，找到cmd.exe.<p>右击菜单 &quot;发送到&quot; -&gt; 桌面快捷方式。<p>在桌面上右击&quot;快捷方式 到 cmd.exe&quot; -&gt; &quot;属性&quot; -&gt; &quot;快捷方式&quot;页 <p>-&gt; 光标高亮&quot;快捷键&quot; -&gt; 按下自定义快捷键 (如：Ctrl + Alt + Z)<p>任何情况下，按下Ctrl + Alt + Z启动dos窗口就可以执行adb命令了<p><p>-----------查看设备连接状态 系列-----------<p>adb get-serialno   获取设备的ID和序列号serialNumber<p>adb devices 查询当前计算机上连接那些设备（包括模拟器和手机），输出格式: [serialNumber] [state]<p>adb get-state  查看模拟器/设施的当前状态.<p>说明：<p>序列号[serialNumber]——由adb创建的一个字符串，这个字符串通过自己的控制端口&lt;type&gt;-&lt;consolePort&gt; <p>唯一地识别一个模拟器/设备实例。一个序列号的例子： emulator-5554<p>-----------发送命令到设备 系列-----------<p>adb [-d|-e|-s &lt;serialNumber&gt;] &lt;command&gt;<p>-d 发送命令给usb连接的设备<p>-e 发送命令到模拟器设备<p>-s &lt;serialNumber&gt; 发送命令到指定设备<p>如启动手机设备shell: adb -d shell  <p>adb forward &lt;local&gt; &lt;remote&gt;发布端口,可以设置任意的端口号，<p>做为主机向模拟器或设备的请求端口。如：adb forward tcp:5555 tcp:8000<p>adb reboot 重启手机<p>adb remount 将system分区重新挂载为可读写分区<p>adb kill-server 终止adb服务进程<p>adb start-server 重启adb服务进程<p>adb root 已root权限重启adb服务<p>adb wait-for-device 在模拟器/设备连接之前把命令转载在adb的命令器中<p>adb jdwp 查看指定的设施的可用的JDWP信息. <p>可以用 forward jdwp:&lt;pid&gt; 端口映射信息来连接指定的JDWP进程.例如： <p>adb forward tcp:8000 jdwp:472 <p>jdb -attach localhost:8000 <p>adb shell am 命令可以启动应用程序<p>adb shell input text &lt;string&gt;  向设备输入文本（光标所在的文本框）<p>adb shell input keyevent &lt;event_code&gt; 向设备发送按键事件<p>如：       <p>在编辑短信时，往文本框输入文本：adb shell input text &quot;hello&quot;  <p>向手机发送键值回Home：adb shell input keyevent 3<p>event_code 参考view/KeyEvent.java中的  KEYCODE_* <p>public static final int KEYCODE_SOFT_LEFT       = 1;<p>public static final int KEYCODE_SOFT_RIGHT      = 2;<p>public static final int KEYCODE_HOME            = 3;<p>public static final int KEYCODE_BACK            = 4;<p>public static final int KEYCODE_CALL            = 5;<p>public static final int KEYCODE_ENDCALL         = 6;<p><p>-----------安装卸载 系列----------- <p>adb install [-l] [-r] &lt;file&gt; - push this package file to the device and install it<p>('-l' means forward-lock the app)<p>('-r' means reinstall the app, keeping its data)<p>adb uninstall [-k] &lt;package&gt; <p></p><p>- remove this app package from the device<p>('-k' means keep the data and cache directories)<p>如：<p>adb install d:\hello.apk<p>adb unstall com.huawei.hello<p>说明：如果带-r选项重新安装apk时，安装在 /data/local/tmp/目录下，手机重启后还是使用原来的apk.<p>-----------文件操作 系列----------- <p>adb push &lt;local&gt; &lt;remote&gt;    - copy file/dir to device<p>adb pull &lt;remote&gt; &lt;local&gt;    - copy file/dir from device<p><p>-----------基本linux shell命令 系列----------- <p>adb shell [command] <p>ls 列出目录下的文件和文件夹<p>cd 切换目录<p>rm 删除目录和文件<p>cat  查看文件内容<p>ps 可以看那个进程再跑<p>ps -x [PID] 查看单个进程的状态<p>top 可以看那个进程的占用率最高<p>su 切换到root用户<p>kill [pid] 杀死一个进程<p>chmod 777 &lt;file&gt; 修改该文件为可执行权限<p>详细使用情况可以登录一台Linux服务器在shell下查看帮助手册,  man &lt;command&gt;<p><p>-----------查看系统状态和信息 系列-----------<p>adb shell procrank 查询各进程内存使用情况<p>adb shell service list 查看services信息<p>adb shell cat /proc/meminfo 查看当前的内存情况<p>adb shell cat /proc/cpuinfo 查看CPU信息（硬件）<p>adb shell cat /proc/iomem  查看IO内存分区<p>adb shell getprop 列出系统所有属性<p>adb shell getprop | findstr &quot;gsm&quot; 列出包含gsm的属性<p>adb shell setprop &lt;key&gt; &lt;value&gt;  修改系统属性<p><p>adb shell sqlite3 可以执行sql语句查看数据库信息， 具体使用情况待调查<p><p>-----------Log 系列----------- <p>adb logcat [ &lt;filter-spec&gt; ] - View device log<p>1~~~~~~~~~~~查看可用日志缓冲区:<p>adb logcat -b radio — 查看缓冲区的相关的信息. <p>adb logcat -b events — 查看和事件相关的的缓冲区. <p>adb logcat -b main — 查看主要的日志缓冲区 <p>2~~~~~~~~~~~过滤日志输出:<p>过滤器语句按照下面的格式描tag:priority ... , tag 表示是标签, priority 是表示标签的报告的最低等级<p>adb logcat *:W  显示优先级为warning或更高的日志信息<p>adb logcat ActivityManager:I MyApp:D *:S<p>日志的标签是系统部件原始信息的一个简要的标志。（比如：“View”就是查看系统的标签）.<p>优先级有下列集中，是按照从低到高顺利排列的: <p>V — Verbose (lowest priority)<p>D — Debug<p>I — Info<p>W — Warning<p>E — Error<p>F — Fatal<p>S — Silent (highest priority, on which nothing is ever printed) <p>如果你电脑上运行logcat ，相比在远程adbshell端，你还可以为环境变量ANDROID_LOG_TAGS :输入一个参数来设置默认的过滤 <p>export ANDROID_LOG_TAGS=&quot;ActivityManager:I MyApp:D *:S&quot;<p>需要注意的是ANDROID_LOG_TAGS 过滤器如果通过远程shell运行logcat 或用adb shell logcat 来运行模拟器/设备不能输出日志.<p>3~~~~~~~~~~~控制日志输出格式:<p>日志信息包括了许多元数据域包括标签和优先级。可以修改日志的输出格式<p></p><p>三亿文库包含各类专业文献、幼儿教育、小学教育、外语学习资料、专业论文、应用写作文书、行业资料、中学教育、生活休闲娱乐、各类资格考试等内容。</p></div>
+
+<p class=MsoFooter align=center style='text-align:center'><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";color:#993300'>三亿文库</span><span lang=EN-US><a
+href="http://3y.uu456.com/">http://3y.uu456.com/</a></span></p>
+
+<p class=MsoFooter align=center style='text-align:center'><span
+style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";color:#993300'>上亿文档资料，等你来发现</span><span lang=EN-US style='font-size:16.0pt;mso-bidi-font-size:10.0pt;color:#993300'><o:p></o:p></span></p>
+</div>
+</body></html>
